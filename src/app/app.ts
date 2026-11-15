@@ -8,16 +8,17 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.css'
 })
 export class App {
-  count:number = 0
+  count: number = 0
 
-  handleIncrement() {
-    this.count++
-}
-handleDecrement() {
-    this.count--
-}
-
-handleReset() {
-this.count = 0
-}
+  handleCounter(action: 'increment' | 'decrement' | 'reset') {
+    if (action === 'increment') {
+      this.count++;
+    } else if (action === 'decrement') {
+      if (this.count > 0) {
+        this.count--;
+      }
+    } else if (action === 'reset') {
+      this.count = 0;
+    }
+  }
 }

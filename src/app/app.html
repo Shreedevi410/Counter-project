@@ -2,8 +2,8 @@
 <div style="text-align: center;">
   <h3 class="count">{{count}}</h3>
   <div>
-    <button class="btn bg-red ">Increment</button>
-    <button class="btn bg-green">Reset</button>
-    <button class="btn bg-blue">Decrement</button>
+    <button class="btn bg-red" (click)="handleCounter('increment')">Increment</button>
+    <button class="btn bg-green" (click)="handleCounter('reset')">Reset</button>
+    <button class="btn bg-blue" (click)="handleCounter('decrement')">Decrement</button>
   </div>
 </div>
