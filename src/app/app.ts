@@ -8,5 +8,16 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('counter-project');
+  count:number = 0
+
+  handleIncrement() {
+    this.count++
+}
+handleDecrement() {
+    this.count--
+}
+
+handleReset() {
+this.count = 0
+}
 }

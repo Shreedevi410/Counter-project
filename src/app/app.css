@@ -1,0 +1,44 @@
+.btn {
+    margin: 0 8px 8px 0;
+    padding: 10px 18px;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    color: #fff;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 150ms ease, box-shadow 150ms ease;
+}
+
+.bg-red {
+    background-color: #dc3545;
+}
+
+.bg-green {
+    background-color: #198754;
+}
+
+.bg-blue {
+    background-color: #0d6efd;
+}
+
+.bg-red:hover {
+    background-color: #bb2d3b;
+}
+
+.bg-green:hover {
+    background-color: #157347;
+}
+
+.bg-blue:hover {
+    background-color: #0b5ed7;
+}
+
+.btn:focus-visible {
+    outline: 3px solid #9ec5fe;
+    outline-offset: 2px;
+}
+
+.btn:active {
+    box-shadow: inset 0 2px 4px rgb(0 0 0 / 20%);
+}
