@@ -1,9 +1,16 @@
 <h1>Counter App</h1>
 <div style="text-align: center;">
-  <h3 class="count">{{count}}</h3>
+  <h3 class="count">{{ count }}</h3>
+
   <div>
-    <button class="btn bg-red" (click)="handleCounter('increment')">Increment</button>
+    <button class="btn bg-red" (click)="handleCounter('increment', step)">+ {{ step }}</button>
     <button class="btn bg-green" (click)="handleCounter('reset')">Reset</button>
-    <button class="btn bg-blue" (click)="handleCounter('decrement')">Decrement</button>
+    <button class="btn bg-blue" (click)="handleCounter('decrement', step)">- {{ step }}</button>
+  </div>
+
+  <div style="margin-top: 12px;">
+    <button class="btn" (click)="setStep(step - 1)">Step -</button>
+    <span style="margin: 0 12px; font-weight: 600;">Step: {{ step }}</span>
+    <button class="btn" (click)="setStep(step + 1)">Step +</button>
   </div>
 </div>
