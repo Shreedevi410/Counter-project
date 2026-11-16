@@ -8,17 +8,21 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.css'
 })
 export class App {
-  count: number = 0
+  count = 0;
+  step = 1;
+  min = 0;
 
-  handleCounter(action: 'increment' | 'decrement' | 'reset') {
+  setStep(nextStep: number) {
+    this.step = Math.max(1, Number.isFinite(nextStep) ? nextStep : 1);
+  }
+
+  handleCounter(action: 'increment' | 'decrement' | 'reset', by = this.step) {
     if (action === 'increment') {
-      this.count++;
+      this.count += by;
     } else if (action === 'decrement') {
-      if (this.count > 0) {
-        this.count--;
-      }
+      this.count = Math.max(this.min, this.count - by);
     } else if (action === 'reset') {
-      this.count = 0;
+      this.count = this.min;
     }
   }
 }
