@@ -1,3 +1,20 @@
+:host {
+    display: block;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 32px 16px;
+}
+
+h1 {
+    margin-bottom: 16px;
+}
+
+.count {
+    font-size: 3rem;
+    margin: 0 0 20px;
+    color: #1f2937;
+}
+
 .btn {
     margin: 0 8px 8px 0;
     padding: 10px 18px;
@@ -41,4 +58,18 @@
 
 .btn:active {
     box-shadow: inset 0 2px 4px rgb(0 0 0 / 20%);
+}
+
+.step-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 16px;
+    gap: 10px;
+}
+
+.step-value {
+    min-width: 72px;
+    font-weight: 700;
+    color: #111827;
 }
