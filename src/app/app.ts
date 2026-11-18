@@ -1,10 +1,8 @@
 import { Component, inject } from '@angular/core';
 import { CounterAction, CounterService } from './counter.service';
-import { CounterKeyboardDirective } from './counter-keyboard.directive';
 
 @Component({
   selector: 'app-root',
-  imports: [CounterKeyboardDirective],
   templateUrl: './app.html',
   styleUrls: ['./app.css', './counter.css']
 })
