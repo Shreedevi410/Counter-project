@@ -6,7 +6,7 @@ import { CounterKeyboardDirective } from './counter-keyboard.directive';
   selector: 'app-root',
   imports: [CounterKeyboardDirective],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrls: ['./app.css', './counter.css']
 })
 export class App {
   private readonly counter = inject(CounterService);

@@ -1,0 +1,33 @@
+:host {
+  display: block;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #eef2ff, #ffffff);
+  color: #111827;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 32px 16px;
+  box-sizing: border-box;
+}
+
+.count {
+  min-height: 58px;
+  margin: 16px 0 24px;
+  color: #1e40af;
+  font-size: 3.5rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.btn {
+  min-width: 44px;
+  border: 0;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgb(15 23 42 / 12%);
+}
