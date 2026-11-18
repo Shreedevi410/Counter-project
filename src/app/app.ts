@@ -1,28 +1,41 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { CounterAction, CounterService } from './counter.service';
+import { CounterKeyboardDirective } from './counter-keyboard.directive';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [CounterKeyboardDirective],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
-  count = 0;
-  step = 1;
-  min = 0;
+  private readonly counter = inject(CounterService);
 
-  setStep(nextStep: number) {
-    this.step = Math.max(1, Number.isFinite(nextStep) ? nextStep : 1);
+  get count(): number {
+    return this.counter.count();
   }
 
-  handleCounter(action: 'increment' | 'decrement' | 'reset', by = this.step) {
-    if (action === 'increment') {
-      this.count += by;
-    } else if (action === 'decrement') {
-      this.count = Math.max(this.min, this.count - by);
-    } else if (action === 'reset') {
-      this.count = this.min;
-    }
+  get step(): number {
+    return this.counter.step();
+  }
+
+  get min(): number {
+    return this.counter.min();
+  }
+
+  get counterHistoryLength(): number {
+    return this.counter.history().length;
+  }
+
+  setStep(nextStep: number) {
+    this.counter.setStep(nextStep);
+  }
+
+  handleCounter(action: CounterAction, by = this.step) {
+    this.counter.handleCounter(action, by);
+  }
+
+  undo() {
+    this.counter.undo();
   }
 }

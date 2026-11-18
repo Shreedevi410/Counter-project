@@ -1,3 +1,10 @@
+<main
+  appCounterKeyboard
+  (increment)="handleCounter('increment')"
+  (decrement)="handleCounter('decrement')"
+  (reset)="handleCounter('reset')"
+  (undo)="undo()"
+>
 <h1>Counter App</h1>
 <div style="text-align: center;">
   <h3 class="count">{{ count }}</h3>
@@ -6,6 +13,7 @@
     <button class="btn bg-red" (click)="handleCounter('increment', step)">+ {{ step }}</button>
     <button class="btn bg-green" (click)="handleCounter('reset')">Reset</button>
     <button class="btn bg-blue" (click)="handleCounter('decrement', step)">- {{ step }}</button>
+    <button class="btn" (click)="undo()" [disabled]="!counterHistoryLength">Undo</button>
   </div>
 
   <div style="margin-top: 12px;">
@@ -14,3 +22,4 @@
     <button class="btn" (click)="setStep(step + 1)">Step +</button>
   </div>
 </div>
+</main>
